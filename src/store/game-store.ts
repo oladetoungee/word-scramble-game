@@ -7,5 +7,5 @@ interface GameState {
 
 export const useGameStore = create<GameState>((set) => ({
   score: 0,
-  incrementScore: () => set((state) => ({ score: state.score + 12 })),
+  incrementScore: () => set((state) => ({ score: state.score + 1 })),
 }));
