@@ -28,8 +28,8 @@ export const WelcomeScreen = ({ onStart }: WelcomeProps) => {
         className="text-lg max-w-xl leading-relaxed"
       >
         Unscramble the words to win! The game has <span className="font-bold text-chart-1">3 rounds</span> with increasing difficulty. 
-        Click letters to form words. You have <span className="font-bold text-chart-1">3 minutes per round</span>. Use hints wisely. 
-        Can you beat the game?
+        Click letters to form words. You have 3 minutes per round. Use hints wisely. 
+        <span className="font-bold text-chart-1">  Can you beat the game?</span>
       </motion.p>
 
       {/* Start Button */}

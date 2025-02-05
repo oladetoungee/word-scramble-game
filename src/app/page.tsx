@@ -1,5 +1,5 @@
 'use client';
-import {  WelcomeScreen } from '@/views';
+import {  WelcomeScreen } from '../components';
 import { useState } from 'react';
 
 
