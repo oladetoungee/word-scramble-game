@@ -39,8 +39,18 @@ export const useGameLogic = () => {
   const WORDS_PER_ROUND = 3;
 
   // State for game progression
-  const [questionCount, setQuestionCount] = useState<number>(0);
-  const roundIndex = Math.floor(questionCount / WORDS_PER_ROUND);
+
+  // Instead, retrieve questionCount and nextQuestion from the store:
+const questionCount = useGameStore((state) => state.questionCount);
+const nextQuestion = useGameStore((state) => state.nextQuestion);
+  // const [questionCount, setQuestionCount] = useState<number>(0);
+  // const roundIndex = Math.floor(questionCount / WORDS_PER_ROUND);
+
+  // Compute the current round based on questionCount.
+
+const roundIndex = Math.floor(questionCount / WORDS_PER_ROUND);
+
+// ..
 
   // Word-related state
   const [currentWordObj, setCurrentWordObj] = useState<WordEntry | null>(null);
@@ -88,6 +98,7 @@ const selectRandomWord = (): WordEntry => {
       setShowConfetti(false);
     }
   }, [questionCount, roundIndex]);
+  
 
   // Simulate loading transition on mount.
   useEffect(() => {
@@ -147,7 +158,7 @@ const selectRandomWord = (): WordEntry => {
     if (newCount >= TOTAL_QUESTIONS) {
       router.push("/game-over");
     } else {
-      setQuestionCount(newCount);
+      nextQuestion(); // Persisted update via zustand
     }
   };
 
