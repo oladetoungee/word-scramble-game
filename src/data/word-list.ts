@@ -24,8 +24,7 @@ export interface WordEntry {
       words: [
         { word: "tree", hint: "A tall plant with a trunk and branches." },
         { word: "star", hint: "A bright object in the night sky." },
-        { word: "fish", hint: "An aquatic animal with gills." },
-     
+        { word: "fish", hint: "An aquatic animal with gills." },  
         { word: "book", hint: "A set of written pages bound together." },
         { word: "moon", hint: "Earth's natural satellite." },
         { word: "door", hint: "An entryway to a room or building." },

@@ -11,7 +11,7 @@ export const GameOverScreen = () => {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen  px-6 text-center">
-            {/* Game Over Title */}
+            {/* Game Over */}
             <motion.h1
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -20,7 +20,6 @@ export const GameOverScreen = () => {
             >
                 Game Over 🎉
             </motion.h1>
-
             {/* Score Display */}
             <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -30,7 +29,6 @@ export const GameOverScreen = () => {
             >
                 Your final score: <span className="text-chart-1">{score}/90</span>
             </motion.p>
-
             {/* Restart Button */}
             <motion.div
                 initial={{ opacity: 0, y: 50, scale: 0.5 }}
@@ -43,7 +41,7 @@ export const GameOverScreen = () => {
                     className="px-8 py-3 mt-6 text-lg font-bold shadow-lg transition-all duration-300"
                     onClick={() => {
                         resetGame();
-                        router.push("/"); // Navigate to home page
+                        router.push("/"); 
                     }}
                 >
                     Go Home 🏠
