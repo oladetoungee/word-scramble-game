@@ -58,9 +58,6 @@ Welcome to the **Word Scramble Challenge** – an interactive, fast-paced word p
 - **[Next.js](https://nextjs.org/):**  
   A React framework for server-side rendering, static site generation, and seamless routing. It provides the backbone of our application, enabling fast performance and great SEO.
 
-- **[React](https://reactjs.org/):**  
-  The component-based UI library that powers the dynamic parts of our application.
-
 - **[Tailwind CSS](https://tailwindcss.com/):**  
   A utility-first CSS framework that allows for rapid, responsive design without ever leaving your HTML.
 
@@ -116,3 +113,6 @@ Follow these steps to get your local copy of **Word Scramble Challenge** up and 
      ```bash
     npm test
     yarn test
+
+
+
