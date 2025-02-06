@@ -12,10 +12,7 @@ Welcome to the **Word Scramble Challenge** – an interactive, fast-paced word p
 - [Installation](#installation)
 - [Running Locally](#running-locally)
 - [Testing](#testing)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+
 
 ---
 
