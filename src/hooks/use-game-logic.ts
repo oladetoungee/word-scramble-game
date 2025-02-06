@@ -5,7 +5,7 @@ import useSound from "use-sound";
 import { useGameStore } from "@/store/game-store";
 import { rounds, WordEntry } from "@/data/word-list";
 
-// Sound effect paths
+// paths to Sound effect
 const CLICK_SOUND = "/sounds/click.mp3";
 const CORRECT_SOUND = "/sounds/correct.mp3";
 const ERROR_SOUND = "/sounds/error.mp3";
@@ -38,19 +38,12 @@ export const useGameLogic = () => {
   const TOTAL_QUESTIONS = 9;
   const WORDS_PER_ROUND = 3;
 
-  // State for game progression
-
-  // Instead, retrieve questionCount and nextQuestion from the store:
+  // retrieve questionCount and nextQuestion from the store
 const questionCount = useGameStore((state) => state.questionCount);
 const nextQuestion = useGameStore((state) => state.nextQuestion);
-  // const [questionCount, setQuestionCount] = useState<number>(0);
-  // const roundIndex = Math.floor(questionCount / WORDS_PER_ROUND);
 
   // Compute the current round based on questionCount.
-
 const roundIndex = Math.floor(questionCount / WORDS_PER_ROUND);
-
-// ..
 
   // Word-related state
   const [currentWordObj, setCurrentWordObj] = useState<WordEntry | null>(null);
@@ -73,9 +66,9 @@ const roundIndex = Math.floor(questionCount / WORDS_PER_ROUND);
   // Get the current round from our word list.
   const currentRound = rounds[roundIndex];
 
-// Select a random word from the current round, avoiding consecutive duplicates.
+// Select a random word from the current round and avoid consecutive duplicates.
 const selectRandomWord = (): WordEntry => {
-  if (currentRound.words.length < 2) return currentRound.words[0]; // No alternative to choose from
+  if (currentRound.words.length < 2) return currentRound.words[0];
 
   let word: WordEntry;
   do {
@@ -100,7 +93,7 @@ const selectRandomWord = (): WordEntry => {
   }, [questionCount, roundIndex]);
   
 
-  // Simulate loading transition on mount.
+  // Simulate loading transition on mount )
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
@@ -152,13 +145,13 @@ const selectRandomWord = (): WordEntry => {
     }
   };
 
-  // Proceed to the next question or end the game.
+  // Proceed to the next question or end the game on question 9.
   const handleNextWord = () => {
     const newCount = questionCount + 1;
     if (newCount >= TOTAL_QUESTIONS) {
       router.push("/game-over");
     } else {
-      nextQuestion(); // Persisted update via zustand
+      nextQuestion(); 
     }
   };
 

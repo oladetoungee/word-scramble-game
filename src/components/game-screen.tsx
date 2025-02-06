@@ -1,4 +1,3 @@
-// GameScreen.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -26,17 +25,14 @@ export const GameScreen = () => {
         handleLetterClick,
         checkAnswer,
         handleNextWord,
-
     } = useGameLogic();
 
     if (loading) return <SkeletonCard />;
 
     return (
         <div className=" flex flex-col items-center justify-center min-h-screen bg-accent-foreground  px-4 sm:px-6">
-
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
                 <Card className=" w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg p-4 sm:p-6 bg-gray-800 shadow-xl rounded-2xl">
-
                     {/* Header */}
                     <div className="flex flex-col sm:flex-row justify-between items-center w-full mb-4 gap-6">
                         <h2 className="text-sm font-bold text-chart-1">
@@ -100,7 +96,6 @@ export const GameScreen = () => {
                             {feedback}
                         </motion.p>
                     )}
-
                     {/* Controls */}
                     <div className="mt-4 flex flex-col sm:flex-row justify-between gap-3">
                         <Button
@@ -114,7 +109,6 @@ export const GameScreen = () => {
                             Next Word
                         </Button>
                     </div>
-
                     {/* Overall Progress */}
                     <div className="mt-6">
                         <p className="text-sm text-gray-300">

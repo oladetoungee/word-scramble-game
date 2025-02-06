@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist, PersistStorage } from "zustand/middleware";
-import { sessionStorageMiddleware } from "./session-storage"; // Your custom sessionStorage middleware
+import { sessionStorageMiddleware } from "./session-storage"; 
 
 interface IncorrectAnswer {
   word: string;
@@ -35,7 +35,7 @@ export const useGameStore = create<GameState>()(
           incorrectAnswers: [...state.incorrectAnswers, { word, userInput }],
         }));
       },
-      // Action to increment questionCount (persisted)
+      //  increment questionCount (persisted)
       nextQuestion: () =>
         set((state) => ({ questionCount: state.questionCount + 1 })),
       resetGame: () => {
