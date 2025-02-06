@@ -63,9 +63,18 @@ export const useGameLogic = () => {
   // Get the current round from our word list.
   const currentRound = rounds[roundIndex];
 
-  // Select a random word from the current round.
-  const selectRandomWord = (): WordEntry =>
-    currentRound.words[Math.floor(Math.random() * currentRound.words.length)];
+// Select a random word from the current round, avoiding consecutive duplicates.
+const selectRandomWord = (): WordEntry => {
+  if (currentRound.words.length < 2) return currentRound.words[0]; // No alternative to choose from
+
+  let word: WordEntry;
+  do {
+    word = currentRound.words[Math.floor(Math.random() * currentRound.words.length)];
+  } while (currentWordObj && word.word === currentWordObj.word);
+
+  return word;
+};
+
 
   // Update the current word when the questionCount or round changes.
   useEffect(() => {

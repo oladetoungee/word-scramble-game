@@ -43,7 +43,7 @@ export const GameScreen = () => {
                             Round {roundIndex + 1} - {roundHints[roundIndex]}
                         </h2>
                         <h2 className="text-sm font-bold text-chart-1">Score: {score}/90</h2>
-                        <h2 className={`text-sm font-bold ${timeLeft <= 10 ? "text-destructive:" : "text-chart-2"}`}>
+                        <h2 className={`text-sm font-bold ${timeLeft <= 10 ? "text-destructive" : "text-chart-4"}`}>
                             {Math.floor(timeLeft / 60)}:{String(timeLeft % 60).padStart(2, "0")}
                         </h2>
                     </div>
@@ -77,7 +77,7 @@ export const GameScreen = () => {
                                     <motion.button
                                         key={letterObj.id}
                                         whileTap={{ scale: 0.9 }}
-                                        className="px-2 py-2 text-sm font-semibold bg-chart-1 text-black rounded-lg shadow-md hover:bg-yellow-400"
+                                        className="px-2 py-2 text-sm font-semibold bg-chart-1 text-black rounded-lg shadow-md hover:bg-chart-4"
                                         onClick={() => handleLetterClick(letterObj)}
                                     >
                                         {letterObj.letter}
