@@ -25,20 +25,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-foreground text-muted-foreground  antialiased `}
       >
-        <ThemeProvider
+          {children}
+        {/* <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+
           disableTransitionOnChange
         >
           <ModeToggle />
           {children}
-        </ThemeProvider>
+        </ThemeProvider> */}
       </body>
     </html>
   );
